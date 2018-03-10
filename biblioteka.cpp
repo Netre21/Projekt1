@@ -165,21 +165,7 @@ macierz macierz::operator*(macierz &p)
             }
         }
     }
-void macierz::operator=(macierz &p)
-    {
-    if(x!=p.x || y!=p.y)
-        {
-        cout<<"blad. bledne wymiary";
-        return;
-        }
-    for(int i=0;i<y;i++)
-        {
-        for(int j=0;j<p.x;j++)
-            {
-            tab[i][j]=p.tab[i][j];
-            }
-        }
-    }
+
 void macierz::operator*=(macierz &p)
     {
     if(x!=p.y || x!=p.x)
@@ -189,7 +175,6 @@ void macierz::operator*=(macierz &p)
         }
     macierz c(y,x);
     int a=0;
-    cout<<y<<" "<<x<<endl;
     for(int i=0;i<y;i++)
         {
         for(int j=0;j<p.x;j++)
@@ -203,4 +188,15 @@ void macierz::operator*=(macierz &p)
             }
         }
     *this=c;
+    }
+istream& operator>>(istream& in, macierz& p)
+    {
+    for(int i=0;i<p.x;i++)
+        {
+        for(int j=0;j<p.y;j++)
+            {
+            in>>p.tab[i][j];
+            }
+        }
+    return in;
     }

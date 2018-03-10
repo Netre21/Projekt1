@@ -10,19 +10,19 @@ public:
     int y;
 
     vector<vector<int>>tab;
-    macierz(int y, int x);
+    macierz(int a, int b);
     macierz operator+(macierz &p);
     void operator+=(macierz &p);
     macierz operator-(macierz &p);
     void operator-=(macierz &p);
     macierz operator*(macierz &p);
     void operator*=(macierz &p);
-    macierz operator>>(macierz &p);
     int operator==(macierz &p);
     int operator!=(macierz &p);
     void zmien(int b, int y, int x);
     int pobierz(int y, int x);
-    void operator=(macierz &p);
+
     friend ostream& operator<<(ostream& out,macierz &p);
+    friend istream& operator>>(istream& out,macierz &p);
     };
 #endif // biblioteka
