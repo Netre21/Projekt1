@@ -5,21 +5,18 @@ using namespace std;
 
 macierz::macierz(int a, int b)
         {
-        vector<int> tbb;
-        for(int i=0;i<a;i++)
+		tab=new int *[a];
+		for(int i=0;i<a;i++)
             {
-            tbb.push_back(0);
+            tab[i]=new int [b];
             }
-        for(int i=0;i<b;i++)
-            {
-            tab.push_back(tbb);
-            }
-        x=b;
-        y=a;
+		y=a;
+		x=b;
         }
 void macierz::zmien(int b, int y, int x)
     {
     tab[y][x]=b;
+    return;
     }
 int macierz::pobierz(int y, int x)
     {
@@ -34,9 +31,9 @@ macierz macierz::operator+(macierz &p)
         return d;
         }
     macierz c(y, x);
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             c.tab[i][j]=tab[i][j]+p.tab[i][j];
             }
@@ -50,9 +47,9 @@ void macierz::operator+=(macierz &p)
         cout<<endl<<"Blad rozne wymiary";
         return;
         }
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             tab[i][j]=tab[i][j]+p.tab[i][j];
             }
@@ -66,9 +63,9 @@ void macierz::operator-=(macierz &p)
         cout<<endl<<"Blad rozne wymiary";
         return;
         }
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             tab[i][j]=tab[i][j]-p.tab[i][j];
             }
@@ -84,9 +81,9 @@ macierz macierz::operator-(macierz &p)
         return d;
         }
     macierz c(y, x);
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             c.tab[i][j]=tab[i][j]-p.tab[i][j];
             }
@@ -99,9 +96,9 @@ int macierz::operator==(macierz &p)
         {
         return 0;
         }
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             if(tab[i][j]!=p.tab[i][j])
                 {
@@ -117,24 +114,26 @@ int macierz::operator!=(macierz &p)
         {
         return 1;
         }
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             if(tab[i][j]!=p.tab[i][j])
                 {
+                cout<<"rozne"<<endl;
                 return 1;
                 }
             }
         }
+    cout<<"takie same"<<endl;
     return 0;
     }
 ostream& operator<<(ostream &out, macierz &p)
     {
 
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             out<<p.tab[i][j]<<" ";
             }
@@ -164,6 +163,7 @@ macierz macierz::operator*(macierz &p)
             a=0;
             }
         }
+    return c;
     }
 
 void macierz::operator*=(macierz &p)
@@ -188,12 +188,13 @@ void macierz::operator*=(macierz &p)
             }
         }
     *this=c;
+    return;
     }
 istream& operator>>(istream& in, macierz& p)
     {
-    for(int i=0;i<p.x;i++)
+    for(int i=0;i<p.y;i++)
         {
-        for(int j=0;j<p.y;j++)
+        for(int j=0;j<p.x;j++)
             {
             in>>p.tab[i][j];
             }
