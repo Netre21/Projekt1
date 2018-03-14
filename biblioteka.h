@@ -10,6 +10,7 @@ class macierz
 	int **tab;
 public:
     macierz(int a, int b);//konstruktor
+    ~macierz();
     macierz operator+(macierz &p);//dodaj dwie macierze (tych samych wymiarow)
     void operator+=(macierz &p);//dodaj dwie macierze i przypisz wynik do pierwszej
     macierz operator-(macierz &p);//odejmij dwie macierze( tych samych rozmiarow)
