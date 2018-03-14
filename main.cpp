@@ -7,8 +7,20 @@ int main()
 int a,b,c,d;
 cout<<"wczytaj wymiary pierwszej macierz najpierw wysokosc, później dlugosc\n";
 cin>>a>>b;
+while(cin.fail()==1)
+    {
+    cin.clear();
+    cin.ignore(1000,'\n');
+    cin>>a>>b;
+    }
 cout<<"wczytaj wymiary drugiej macierz najpierw wysokosc, później dlugosc\n";
 cin>>c>>d;
+while(cin.fail()==1)
+    {
+    cin.clear();
+    cin.ignore(1000,'\n');
+    cin>>c>>d;
+    }
 macierz ex1(a,b);
 macierz ex2(c,d);
 cout<<"wczytaj zawartość pierwszej macierzy (wierszami)\n";

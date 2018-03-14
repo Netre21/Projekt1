@@ -13,14 +13,6 @@ macierz::macierz(int a, int b)
 		y=a;
 		x=b;
         }
-macierz::~macierz()
-{
-for(int i=0;i<a;i++)
-    {
-    delete[] tab[i];
-    }
-delete[] tab;
-}
 void macierz::zmien(int b, int y, int x)
     {
     tab[y][x]=b;
