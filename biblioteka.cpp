@@ -4,15 +4,23 @@
 using namespace std;
 
 macierz::macierz(int a, int b)
+    {
+    tab=new int *[a];
+    for(int i=0;i<a;i++)
         {
-		tab=new int *[a];
-		for(int i=0;i<a;i++)
-            {
-            tab[i]=new int [b];
-            }
-		y=a;
-		x=b;
+        tab[i]=new int [b];
         }
+    y=a;
+    x=b;
+    }
+macierz::~macierz()
+{
+for(int i=0;i<y;i++)
+    {
+    delete[] tab[i];
+    }
+delete[] tab;
+}
 void macierz::zmien(int b, int y, int x)
     {
     tab[y][x]=b;
