@@ -178,7 +178,7 @@ macierz macierz::operator*(macierz &p)
             {
             for(int k=0;k<x;k++)
                 {
-                a=tab[i][k]*p.tab[k][j];
+                a=a+tab[i][k]*p.tab[k][j];
                 }
             c.tab[i][j]=a;
             a=0;
