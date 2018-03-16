@@ -25,10 +25,10 @@ macierz ex1(a,b);
 macierz ex2(c,d);
 cout<<"wczytaj zawartość pierwszej macierzy (wierszami)\n";
 cin>>ex1;
-cout<<ex1;
+cout<<endl<<ex1;
 cout<<"wczytaj zawartość drugiej macierzy (wierszami)\n";
 cin>>ex2;
-cout<<ex2;
+cout<<endl<<ex2;
 cout<<"1. dodaj macierze\n2. dodaj macierze i wartosc wpisz do pierwszej\n";
 cout<<"3. odejmij macierze\n4. odejmij macierze i wartosc wpisz do pierwszej\n";
 cout<<"5. pomnoz macierze\n6. pomnoz macierze i wartosc wpisz do pierwszej\n";
@@ -115,10 +115,10 @@ switch(licznik)
 
 	case 9:
 	{
-		cout<<"podaj wspolrzedne";
+		cout<<"podaj wspolrzedne ";
 		int k,l;
 		cin>>k>>l;
-		cout<<ex1.pobierz(k,l);
+		cout<<ex1.pobierz(k,l)<<endl;
 
 	}
 	break;

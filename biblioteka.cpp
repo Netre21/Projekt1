@@ -15,11 +15,11 @@ macierz::macierz(int a, int b)
     }
 macierz::~macierz()
 {
-for(int i=0;i<y;i++)
-    {
-    delete[] tab[i];
-    }
-delete[] tab;
+    for(int i=0;i<y;i++)
+        {
+        delete[] tab[i];
+        }
+    delete[] tab;
 }
 void macierz::zmien(int b, int y, int x)
     {
@@ -46,6 +46,7 @@ macierz macierz::operator+(macierz &p)
             c.tab[i][j]=tab[i][j]+p.tab[i][j];
             }
         }
+    cout<<c;
     return c;
     }
 void macierz::operator+=(macierz &p)
@@ -171,6 +172,7 @@ macierz macierz::operator*(macierz &p)
             a=0;
             }
         }
+    cout<<"egfe";
     return c;
     }
 
