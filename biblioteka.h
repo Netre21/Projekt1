@@ -1,3 +1,6 @@
+//autor: Pawel Bugyi
+//Projekt1
+
 #include<vector>
 #ifndef biblioteka
 #define biblioteka

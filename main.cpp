@@ -1,3 +1,5 @@
+//autor: Pawel Bugyi
+//Projekt 1
 #include"biblioteka.h"
 #include<iostream>
 using namespace std;

@@ -1,3 +1,5 @@
+//autor: Pawel Bugyi
+// Projekt numer 1
 #include<iostream>
 #include<vector>
 #include"biblioteka.h"
